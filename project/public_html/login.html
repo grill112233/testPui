@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<title>เข้าสู่ระบบ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "icon" href ="css/image/icon.png"> 
+<link rel="stylesheet" href="./css/login.css">
+<script src="js/login.js"></script>
+<script src="js/data.js"></script>
+<body>
+	<div class="mainlogin">
+	
+		<header class="header">
+			<div class="menuHeaderRow">
+				<div class="menuHeaderCol">
+					<a href="#"><img class="btnTH" src="css/image/th.jpg" alt="th"></a>
+					<a href="#"><img class="btnEN" src="css/image/en.jpg" alt="en"></a>
+				</div>
+			</div>
+		</header>
+		
+	<div class="rightDisplay">
+		<div class="logoRow">
+			<div class="logoCol">
+			</div>
+			<div class="logoCol">
+				<img class="headerlogo" src="css/image/headerlogo.jpg" alt="headerlogo">
+			</div>
+		</div>
+		
+		<div class="displayRow">
+			<div class="displayCol">
+			</div>
+			<div class="displayCol">
+				<p style="color:#696969;margin-left:30px;">เข้าสู่ระบบ(นักศึกษา/บุคลากร)</p>
+				<div class="login">
+					<button class="tablink tabFontWhite" onclick="openCity('loginUser', this)" id="defaultOpen">เข้าสู่ระบบด้วยบัญชี</button>
+					<button class="tablink tabFontWhite" onclick="openCity('loginScan', this)">แสกนเพื่อเข้าสู่ระบบ</button>
+				
+				<div id="loginUser" class="tabcontent">
+					<div class="loginContrainer">
+						<div id="alert" class="alertLogin">
+						</div>
+						<form name="myForm" action="loadingtohome3.html" onsubmit="return validateForm()" method="post">
+							<input type="text" placeholder="เลขทะเบียนนักศึกษา/ชื่อผู้ใช้" name="username" class="textLogin">
+							<input type="password" placeholder="รหัสผ่าน" name="password" class="textLogin">
+							<button type="submit" class="btnLogin">เข้าสู่ระบบ</button>
+							<a class="forgetPass" href="#">ลืมรหัสผ่าน?</a>
+						</form>
+					</div>
+				</div>
+
+				<div id="loginScan" class="tabcontent">
+					<div class="scan">
+						<p><img class="scanlogin" src="css/image/scan.jpg" alt="scan"></p> 
+						<p class="scanloginFont"> กรุณาสแกนเพื่อเข้าสู่ระบบ</p>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+<script>document.getElementById("defaultOpen").click();</script>
+
+</body>
+</html> 

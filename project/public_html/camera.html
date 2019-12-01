@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<link rel = "icon" href ="css/image/icon.png"> 
+<title>ถ่ายภาพยืนยันตัวตน</title>
+  
+<style>
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: none;
+}
+#videoElement {
+    width: 600px;
+    height: 600px;
+	border-radius: 50%;
+    background-color: lightgray;
+}
+@font-face {
+	font-family: 'Kanit-Thin';
+	src: url('font/Kanit-Regular.ttf');
+}
+body {
+  background-color: gray;
+  	font-family: 'Kanit-Thin', sans-serif;
+}
+</style>
+</head>
+  
+<body>
+<div id="container">
+    <video autoplay="true" id="videoElement">
+    </video>
+</div>
+<table style="margin-top:270px;margin-left:600px;border:1px solid black;text-align:center;">
+ <tr style="font-size:60px;">
+  <td id="days"><center>00</center></td>
+  <td id="hours"><center>00</center></td>
+  <td id="min"><center>00</center></td>
+  <td id="sec"><center>00</center></td>
+ </tr>
+ <tr>
+  <td><center> &ensp;&ensp;&ensp;&ensp;Days &ensp;&ensp;&ensp;&ensp;</center></td>
+  <td><center> &ensp;&ensp;&ensp;&ensp;Hours &ensp;&ensp;&ensp;&ensp;</center></td>
+  <td><center> &ensp;&ensp;&ensp;&ensp;Minutes &ensp;&ensp;&ensp;&ensp;</center></td>
+  <td><center> &ensp;&ensp;&ensp;&ensp;Seconds &ensp;&ensp;&ensp;&ensp;</center></td> 
+ </tr>
+</table>
+<script type="text/javascript">
+ var x = new Date();
+ var y = x.getTime();
+ var total = y + (1*1*10000);
+ function count()
+ {
+  var now = new Date();
+  var currentTime = now.getTime();
+  
+   var diff = total - currentTime;
+   var s = Math.floor(diff/1000);
+   var m = Math.floor(s/60);
+   var h = Math.floor(m/60);
+   var d = Math.floor(h/24);
+ 
+  h=h%24;
+  m=m%60;
+  s=s%60;
+  
+  if(s == 0)
+	window.location.replace("loadingtohome6.html");
+
+  h=(h<10)?"0"+h:h;
+  m=(m<10)?"0"+m:m;
+  s=(s<10)?"0"+s:s;
+  d=(d<10)?"0"+d:d;  
+  
+  document.getElementById("days").innerHTML=d;
+  document.getElementById("hours").innerHTML= h;
+  document.getElementById("min").innerHTML= m;
+  document.getElementById("sec").innerHTML= s;
+  setTimeout(count,1000);
+ }
+ count();
+</script>
+<script>
+ var video = document.querySelector("#videoElement");
+ 
+if (navigator.mediaDevices.getUserMedia) {       
+    navigator.mediaDevices.getUserMedia({video: true})
+  .then(function(stream) {
+    video.srcObject = stream;
+  })
+  .catch(function(err0r) {
+    console.log("Something went wrong!");
+  });
+}
+
+</script>
+<script type="text/javascript">
+	var counter = 10;
+	setInterval( function(){
+		counter--;
+		
+		if(count >= 0){
+			id = document.getElementById("count");
+			id.innerHTML = counter;
+		}
+	}, 1000);
+</script>
+</body>
+</html>

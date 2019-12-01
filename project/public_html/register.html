@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<title>คำร้องนักศึกษา</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "icon" href ="css/image/icon.png"> 
+<link rel="stylesheet" href="./css/register.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="js/register.js"></script>
+<body>
+	<div class="main">
+		<div class="header">
+			<div class="menuheader" style="margin-top:10px;">
+					<div class="menuheader2 me">
+						<a class="menu1" href="loadingtohome3.html">หน้าหลัก</a>
+					</div>
+					<div class="menuheader2 me">
+						<a class="menu1" href="register.html">คำร้องนักศึกษา</a>
+					</div>
+					<div class="menuheader2 me">
+						<a class="menu1" href="#track">ติดตามสถานะ</a>
+					</div>
+					<div class="menuheader2 me">
+						<a class="menu1" href="#payment">ภาระค่าใช้จ่าย</a>
+					</div>
+			</div>
+			<div class="header2">
+				<div class="showprofile">
+					<div class="containerAccount">
+						<button onclick="profile()" class="btnprofile">จ</button>
+					</div>
+					<div id="showpro">
+						<div class="containerShow">
+							<div class="topShow">
+								<div style="text-align:center;">
+									<p>ชื่อ จรัลชัย ศรีสวัสดิ์</p>
+									<p>เลขทะเบียนนักศึกษา 6109650561</p>
+									<p>อีเมล grill0992295002@gmail.com</p>
+								</div>
+								<div style="margin-left:90px;margin-top:50px;margin-bottom:30px;">
+									<a onclick="management()" class="btnmanage" href="#home">จัดการบัญชี</a>
+								</div>
+							</div>
+								<div style="margin-top:30px;margin-bottom:30px;">
+									<a onclick="logout()" class="btnlogout" href="login.html">ออกจากระบบ</a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="display">
+			<div class="dis1">
+				<div class="displayhead">
+					<div>คำร้องนักศึกษา ณ วันที่ 7 ต.ค. 62</div>
+					<div>โครงการปริญญาตรีภาคพิเศษ ภาควิทยาการคอมพิวเตอร์</div>
+				</div>
+				<div class="dis2">เรื่อง จดทะเบียนล่าช้า/เพิ่ม</div>
+				<div class="dis2">เรียน อาจารย์สดุดี สรีวิท</div>
+				<div class="dis2">ข้าพเจ้า นายจรัลชัย ศรีสวัสดิ์   เลขทะเบียนนักศึกษา 6109650561 ชั้นปีที่ 2</div>
+				<div class="dis2">สาขาวิทยาการคอมพิวเตอร์ ที่อยู่ 112/117 หมู่ที่ 18 ตำบลคลองหนึ่ง อำเภอคลองหลวง จังหวัดปทุมธานี 12120</div>
+				<div class="dis2">จดทะเบียนล่าช้า/เพิ่มล่าช้า ภาคการศึกษาที่ 1</div>
+				<div class="row">
+					<div class="col dis2" style="width:30%;">รหัสวิชา
+						<select class="select">
+							<option>select subject</option>
+							<option>CS216</option>
+							<option>CS233</option>
+							<option>CS245</option>
+							<option>CS264</option>
+						</select>
+					</div>
+					<div class="col dis2" style="width:30%;">ชื่อวิชา
+						<select class="select" style="cursor: not-allowed;" disabled>
+							<option>DATA STRUCTOR</option>
+						</select>
+					</div>
+					<div class="col dis2" style="width:30%;">section
+						<select class="select">
+							<option>select section</option>
+							<option>650001</option>
+							<option>650002</option>
+						</select>
+					</div>
+				</div>
+				<div class="row" style="margin-top:5px;width:100%;">
+				<form name="myRegis" action="loadingtocamera.html" onsubmit="return validateRegis()" method="post">
+					<div class="col" style="width:20%;">
+						<textarea class="textarea1" name="message" placeholder="เหตุผลที่ยื่นคำร้องเนื่องจาก..."></textarea>
+					</div>
+					<div class="col" style="width:20%;margin-left:30px;">
+						<div style="margin-left:10px;">เบอร์ติดต่อนักศึกษาล่าสุด</div>
+						<input class="phone" name="phone1" placeholder="เบอร์โทรศัพท์"></input>
+						<div style="margin-left:10px;">เบอร์ติดต่อผู้ปกครองล่าสุด</div>
+						<input class="phone" name="phone2" placeholder="เบอร์โทรศัพท์"></input>
+					</div>
+						<div class="col" style="width:20%;margin-left:40px;margin-top:50px;">
+							<button class="btnsend">ยืนยันการส่งคำร้อง</button>
+						</div>
+						<div class="col" style="width:20%;margin-left:40px;margin-top:50px;">
+							<div id="alert" class="alertRegis"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			
+		</footer>
+	</div>
+</body>
+</html> 

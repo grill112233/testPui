@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<link rel = "icon" href ="css/image/icon.png"> 
+<link rel="stylesheet" type="text/css" href="js/spinkit.css">
+<title>loading...</title>
+<style>
+    .example {
+      padding: 100px;
+    }
+</style>
+</head>
+  
+<body>
+  <div class="example">
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+      <div class="sk-circle-dot" style="margin-left:700px;margin-top:300px;"></div>
+  </div>
+<table style="border:none;">
+ <tr style="font-size:1px;color:white;">
+  <td id="days"><center>00</center></td>
+  <td id="hours"><center>00</center></td>
+  <td id="min"><center>00</center></td>
+  <td id="sec"><center>00</center></td>
+ </tr>
+</table>
+<script type="text/javascript">
+ var x = new Date();
+ var y = x.getTime();
+ var total = y + (1*1*3000);
+ function count()
+ {
+  var now = new Date();
+  var currentTime = now.getTime();
+  
+   var diff = total - currentTime;
+   var s = Math.floor(diff/1000);
+   var m = Math.floor(s/60);
+   var h = Math.floor(m/60);
+   var d = Math.floor(h/24);
+ 
+  h=h%24;
+  m=m%60;
+  s=s%60;
+  
+  if(s == 0)
+	window.location.replace("home.html");
+
+  h=(h<10)?"0"+h:h;
+  m=(m<10)?"0"+m:m;
+  s=(s<10)?"0"+s:s;
+  d=(d<10)?"0"+d:d;  
+  
+  document.getElementById("days").innerHTML=d;
+  document.getElementById("hours").innerHTML= h;
+  document.getElementById("min").innerHTML= m;
+  document.getElementById("sec").innerHTML= s;
+  setTimeout(count,1000);
+ }
+ count();
+</script>
+</body>
+</html>
